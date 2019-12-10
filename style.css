@@ -1,0 +1,43 @@
+body {
+    background-color: #EEE2DC;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  h1 {
+    color: #AC3B61;
+  }
+
+  
+  h2{
+    color: #376E6F;
+}
+  p {
+    color: #123C69;
+  }
+
+
+  #story{
+    width: 50%;
+    border:3px dotted #edc7b7;
+    margin: 0 auto;
+    padding: 10px;
+    align-content: center;
+    margin-bottom: 30px;
+    min-height: 200px;
+    overflow: hidden;
+    
+  }
+  #char_container{
+    width: 50%;
+    min-height: 200px;
+    border:3px dotted #edc7b7;
+    padding: 10px;
+    margin: 0 auto;
+    align-content: center;
+    text-align: center;figcaption
+  }
+
+  .char
+  {
+
+
+  }
