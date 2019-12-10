@@ -1,7 +1,8 @@
 <?php
-
+	//handles the access to marvel api
     class marvel_api {
     
+	//attributes
         private $publickey;
         private $privatekey;
         public $ts;
@@ -11,6 +12,8 @@
         public $description;
         public $title;
         public $attribution;
+
+	//constructor
 
         function __construct( $publickey, $privatekey, $main_char) {
             //init the attributes
@@ -25,8 +28,10 @@
 
         }
 
+	//methods
 
 
+	//gets character's information, including one story where they apper 
         function init_main_char()
         {
             //get the char id
@@ -38,6 +43,8 @@
             $this->attribution = $this->main_char->attributionHTML;
         }
 
+	
+	//gets information about a story
         function get_random_story($character)
         {
             
@@ -51,12 +58,11 @@
 
         function list_story_char()
         {
-            
+            //For each character in the list, display their name and picture.
             foreach ( $this->story->data->results[0]->characters->items as $character )
             {
                 echo '<div class = "char">';
                 echo '<figure>';
-                //echo "<p>".$character->name;
                 $md5_char = $this->gen_md5();
                 $url_char = $character->resourceURI."?ts=".$this->ts."&apikey=".$this->publickey."&hash=".$md5_char;
                 $json_char = json_decode(file_get_contents ($url_char));
@@ -79,7 +85,7 @@
         }
 
 
-
+	//generates the hash function for accessing marvel api 
         function gen_md5()
         {
             $this->ts = new DateTime();
